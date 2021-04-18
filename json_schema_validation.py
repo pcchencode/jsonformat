@@ -27,7 +27,7 @@ def validate(data):
 
         #檢查欄位格式
         assert type(data['ad_network']) is str
-        assert datetime.strptime(data['date'], '%Y-%m-%d')
+        assert datetime.strptime(data['date'], '%Y-%m-%d') #正確日期格式
         assert type(data['app_name']) is str
         assert type(data['unit_id']) is int
         assert type(data['request']) is int

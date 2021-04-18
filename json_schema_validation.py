@@ -4,6 +4,7 @@ import jsonschema
 
 def validate(data):
     try:
+        #檢查欄位存在性
         assert "ad_network" in data
         assert "date" in data
         assert "app_name" in data
@@ -12,6 +13,7 @@ def validate(data):
         assert "revenue" in data
         assert "imp" in data
 
+        #檢查缺漏值
         assert data['ad_network'] is not None
         assert len(data['ad_network'])>1
         assert data['date'] is not None
@@ -23,6 +25,7 @@ def validate(data):
         assert data['revenue'] is not None
         assert data['imp'] is not None
 
+        #檢查欄位格式
         assert type(data['ad_network']) is str
         assert datetime.strptime(data['date'], '%Y-%m-%d')
         assert type(data['app_name']) is str

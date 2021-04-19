@@ -31,7 +31,7 @@ def validate(data):
         assert type(data['app_name']) is str
         assert type(data['unit_id']) is int
         assert type(data['request']) is int
-        assert type(data['revenue']) is float
+        assert type(data['revenue']) in (int, float) #number
         assert type(data['imp']) is int
         return True
     except Exception as e:
